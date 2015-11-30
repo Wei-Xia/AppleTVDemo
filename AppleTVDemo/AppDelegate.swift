@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
     static let TVBootURL = "\(AppDelegate.TVBaseURL)js/application.js"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         let appControllerContext = TVApplicationControllerContext()
         
@@ -35,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
                 appControllerContext.launchOptions[kind] = value
             }
         }
-        appController = TVApplicationController(context: appControllerContext, window: nil, delegate: self)
+        appController = TVApplicationController(context: appControllerContext, window: window, delegate: self)
 
         return true
     }
