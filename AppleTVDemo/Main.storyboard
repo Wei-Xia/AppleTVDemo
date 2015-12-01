@@ -20,6 +20,9 @@
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P2k-1S-HpA">
                                 <rect key="frame" x="20" y="0.0" width="1880" height="780"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="780" id="lqW-LA-sov"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JTu-mf-gfv">
                                     <size key="itemSize" width="600" height="600"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -65,20 +68,50 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Learn More"/>
                             </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrL-Rm-hXT">
+                                <rect key="frame" x="70" y="830" width="1406" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tg-HF-0mz">
+                                        <rect key="frame" x="50" y="10" width="173" height="117"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="100"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bazinga!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdg-QG-GjL">
+                                        <rect key="frame" x="50" y="207" width="265" height="199"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="170"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="0tg-HF-0mz" firstAttribute="leading" secondItem="mrL-Rm-hXT" secondAttribute="leading" constant="50" id="8Xs-37-ntK"/>
+                                    <constraint firstItem="Jdg-QG-GjL" firstAttribute="leading" secondItem="0tg-HF-0mz" secondAttribute="leading" id="XQy-yg-9O8"/>
+                                    <constraint firstItem="0tg-HF-0mz" firstAttribute="top" secondItem="mrL-Rm-hXT" secondAttribute="top" constant="10" id="ZVw-Ii-Vhs"/>
+                                    <constraint firstAttribute="height" constant="200" id="aMH-Rj-tKu"/>
+                                    <constraint firstItem="Jdg-QG-GjL" firstAttribute="top" secondItem="0tg-HF-0mz" secondAttribute="bottom" constant="80" id="kSY-e5-nN3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <constraints>
-                            <constraint firstItem="S67-xR-IwN" firstAttribute="top" secondItem="P2k-1S-HpA" secondAttribute="bottom" constant="300" id="4ud-LW-hht"/>
+                            <constraint firstItem="mrL-Rm-hXT" firstAttribute="top" secondItem="P2k-1S-HpA" secondAttribute="bottom" constant="50" id="Dko-A1-qNC"/>
                             <constraint firstItem="S67-xR-IwN" firstAttribute="top" secondItem="NGe-zJ-yHD" secondAttribute="bottom" constant="50" id="ER3-mT-jci"/>
-                            <constraint firstItem="P2k-1S-HpA" firstAttribute="top" secondItem="PGp-1A-S7c" secondAttribute="bottom" id="Jv5-sq-mgT"/>
+                            <constraint firstItem="mrL-Rm-hXT" firstAttribute="leading" secondItem="oeI-5q-7Sx" secondAttribute="leadingMargin" constant="50" id="QZu-IO-JLu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P2k-1S-HpA" secondAttribute="trailing" id="k3a-Yg-utQ"/>
                             <constraint firstItem="P2k-1S-HpA" firstAttribute="leading" secondItem="oeI-5q-7Sx" secondAttribute="leadingMargin" id="kYN-Ia-b0B"/>
+                            <constraint firstItem="S67-xR-IwN" firstAttribute="top" secondItem="mrL-Rm-hXT" secondAttribute="bottom" constant="50" id="koR-L5-Dsy"/>
+                            <constraint firstItem="NGe-zJ-yHD" firstAttribute="leading" secondItem="mrL-Rm-hXT" secondAttribute="trailing" constant="50" id="nwD-Jv-dLT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NGe-zJ-yHD" secondAttribute="trailing" constant="100" id="yGd-J1-URA"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="P2k-1S-HpA" id="w52-GB-1yo"/>
                         <outlet property="learnMoreButton" destination="NGe-zJ-yHD" id="wU9-bk-ZxA"/>
+                        <outlet property="learnMoreViewHeightConstraint" destination="aMH-Rj-tKu" id="bbV-Rc-rpj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12u-fn-Fsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
