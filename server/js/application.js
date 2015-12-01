@@ -10,7 +10,6 @@ App.onLaunch = function(launchOptions) {
 	evaluateScripts(javascriptFiles, function(success) {
 		if(success) {
 			resourceLoader = new ResourceLoader(options.BASEURL);
-			presentScreen("episodes");
 		} else {
 			var errorDoc = createAlert("Evaluate Scripts Error", "Error attempting to evaluate external JavaScript files.");
 			navigationDocument.presentModal(errorDoc);
@@ -38,5 +37,5 @@ var presentScreen = function(documentName){
 	resourceLoader.loadResource(`${options.BASEURL}templates/${documentName}.xml.js`, function(resource) {
 		var doc = Presenter.makeDocument(resource);
 		doc.addEventListener("select", Presenter.load.bind(Presenter));
-		Presenter.pushDocument(doc);})
+		Presenter.setDocument(doc);})
 }

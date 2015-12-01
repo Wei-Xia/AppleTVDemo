@@ -15,6 +15,20 @@ var Presenter = {
 		navigationDocument.pushDocument(xml);
 	},
 
+	setDocument: function(xml) {
+		if(navigationDocument.documents.length){
+		var oldDoc = navigationDocument.documents[navigationDocument.documents.length - 1];
+			if(oldDoc.body == xml.body){
+				return
+			}else{
+				navigationDocument.pushDocument(xml);	
+			}
+		}else{
+			navigationDocument.pushDocument(xml);
+		}
+	},
+
+
 	load: function(event) {
   	var self = this,
       	ele = event.target,

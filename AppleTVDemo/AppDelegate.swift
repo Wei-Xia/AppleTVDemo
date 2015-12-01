@@ -14,30 +14,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
 
     var window: UIWindow?
     
-    var appController: TVApplicationController?
+    var tvAppController: TVApplicationController?
     
     static let TVBaseURL = "http://localhost:8080/"
     
     static let TVBootURL = "\(AppDelegate.TVBaseURL)js/application.js"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let appControllerContext = TVApplicationControllerContext()
+        let tvAppControllerContext = TVApplicationControllerContext()
         
         if let javaScriptURL = NSURL(string: AppDelegate.TVBootURL) {
-            appControllerContext.javaScriptApplicationURL = javaScriptURL
+            tvAppControllerContext.javaScriptApplicationURL = javaScriptURL
         }
         
-        appControllerContext.launchOptions["BASEURL"] = AppDelegate.TVBaseURL
+        tvAppControllerContext.launchOptions["BASEURL"] = AppDelegate.TVBaseURL
         
         if let launchOptions = launchOptions as? [String: AnyObject] {
             for (kind, value) in launchOptions {
-                appControllerContext.launchOptions[kind] = value
+                tvAppControllerContext.launchOptions[kind] = value
             }
         }
-        appController = TVApplicationController(context: appControllerContext, window: window, delegate: self)
+        tvAppController = TVApplicationController(context: tvAppControllerContext, window: nil, delegate: self)
 
+        if let root = window?.rootViewController as? RootViewController{
+            root.tvAppController = tvAppController
+        }
+        
         return true
     }
     
