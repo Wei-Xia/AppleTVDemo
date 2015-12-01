@@ -17,6 +17,14 @@ class CastCollectionViewController: UIViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        bottomFocusGuide = UIFocusGuide()
+        
+        self.view.addLayoutGuide(bottomFocusGuide)
+        bottomFocusGuide.preferredFocusedView = learnMoreButton
+        bottomFocusGuide.topAnchor.constraintEqualToAnchor(learnMoreButton.topAnchor).active = true
+        bottomFocusGuide.leftAnchor.constraintEqualToAnchor(self.view.leftAnchor).active = true
+        bottomFocusGuide.widthAnchor.constraintEqualToAnchor(self.view.widthAnchor).active = true
+        bottomFocusGuide.heightAnchor.constraintEqualToAnchor(learnMoreButton.heightAnchor).active = true
     }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
