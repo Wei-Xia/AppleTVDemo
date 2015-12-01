@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CastCollectionViewCell.swift
 //  AppleTVDemo
 //
 //  Created by Oleksii Ozun on 01.12.15.
@@ -8,10 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CastCollectionViewCell: UICollectionViewCell {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    @IBOutlet weak var imageView: UIImageView?
 }
-

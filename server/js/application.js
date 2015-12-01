@@ -37,5 +37,5 @@ var presentScreen = function(documentName){
 	resourceLoader.loadResource(`${options.BASEURL}templates/${documentName}.xml.js`, function(resource) {
 		var doc = Presenter.makeDocument(resource);
 		doc.addEventListener("select", Presenter.load.bind(Presenter));
-		Presenter.pushDocument(doc);})
+		Presenter.setDocument(doc);})
 }

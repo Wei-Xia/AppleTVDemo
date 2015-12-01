@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
 
     var window: UIWindow?
     
-    var appController: TVApplicationController?
+    var tvAppController: TVApplicationController?
     
     static let TVBaseURL = "http://localhost:8080/"
     
@@ -22,36 +22,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let appControllerContext = TVApplicationControllerContext()
+        let tvAppControllerContext = TVApplicationControllerContext()
         
         if let javaScriptURL = NSURL(string: AppDelegate.TVBootURL) {
-            appControllerContext.javaScriptApplicationURL = javaScriptURL
+            tvAppControllerContext.javaScriptApplicationURL = javaScriptURL
         }
         
-        appControllerContext.launchOptions["BASEURL"] = AppDelegate.TVBaseURL
+        tvAppControllerContext.launchOptions["BASEURL"] = AppDelegate.TVBaseURL
         
         if let launchOptions = launchOptions as? [String: AnyObject] {
             for (kind, value) in launchOptions {
-                appControllerContext.launchOptions[kind] = value
+                tvAppControllerContext.launchOptions[kind] = value
             }
         }
-        appController = TVApplicationController(context: appControllerContext, window: nil, delegate: self)
+        tvAppController = TVApplicationController(context: tvAppControllerContext, window: nil, delegate: self)
 
+        if let root = window?.rootViewController as? RootViewController{
+            root.tvAppController = tvAppController
+        }
+        
         return true
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func appController(appController: TVApplicationController, evaluateAppJavaScriptInContext jsContext: JSContext) {
+        
+        let pushMyViewBlock : @convention(block) () -> Void = {
+            () -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                let story = UIStoryboard(name: "Main", bundle: nil)
+                let vc = story.instantiateViewControllerWithIdentifier("cast")
+                self.tvAppController?.navigationController.pushViewController(vc, animated: true)
+            })
+        }
 
+        jsContext.setObject(unsafeBitCast(pushMyViewBlock, AnyObject.self), forKeyedSubscript: "pushCastCollectionViewController")
+    }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
+        print("Application launched with URL: \(url)")
+        return true
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
