@@ -13,7 +13,34 @@
 		96FDC7681C0D133E0004C554 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FDC7671C0D133E0004C554 /* RootViewController.swift */; };
 		96FDC76C1C0D33A60004C554 /* CastCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FDC76B1C0D33A60004C554 /* CastCollectionViewController.swift */; };
 		96FDC76E1C0D35BA0004C554 /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FDC76D1C0D35BA0004C554 /* CastCollectionViewCell.swift */; };
+		96FDC7761C0D593D0004C554 /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FDC7751C0D593D0004C554 /* TVServices.framework */; };
+		96FDC7791C0D593D0004C554 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FDC7781C0D593D0004C554 /* ServiceProvider.swift */; };
+		96FDC77D1C0D593D0004C554 /* AppleTVServiceDemo.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 96FDC7731C0D593D0004C554 /* AppleTVServiceDemo.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96FDC77B1C0D593D0004C554 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9602937B1C0D010200576F43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96FDC7721C0D593D0004C554;
+			remoteInfo = AppleTVServiceDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		96FDC7811C0D593D0004C554 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				96FDC77D1C0D593D0004C554 /* AppleTVServiceDemo.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		960293831C0D010200576F43 /* AppleTVDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleTVDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +51,10 @@
 		96FDC7671C0D133E0004C554 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		96FDC76B1C0D33A60004C554 /* CastCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastCollectionViewController.swift; sourceTree = "<group>"; };
 		96FDC76D1C0D35BA0004C554 /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
+		96FDC7731C0D593D0004C554 /* AppleTVServiceDemo.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppleTVServiceDemo.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		96FDC7751C0D593D0004C554 /* TVServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TVServices.framework; path = System/Library/Frameworks/TVServices.framework; sourceTree = SDKROOT; };
+		96FDC7781C0D593D0004C554 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		96FDC77A1C0D593D0004C554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +65,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96FDC7701C0D593D0004C554 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96FDC7761C0D593D0004C554 /* TVServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -41,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				960293851C0D010200576F43 /* AppleTVDemo */,
+				96FDC7771C0D593D0004C554 /* AppleTVServiceDemo */,
+				96FDC7741C0D593D0004C554 /* Frameworks */,
 				960293841C0D010200576F43 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				960293831C0D010200576F43 /* AppleTVDemo.app */,
+				96FDC7731C0D593D0004C554 /* AppleTVServiceDemo.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +109,23 @@
 			path = AppleTVDemo;
 			sourceTree = "<group>";
 		};
+		96FDC7741C0D593D0004C554 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96FDC7751C0D593D0004C554 /* TVServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96FDC7771C0D593D0004C554 /* AppleTVServiceDemo */ = {
+			isa = PBXGroup;
+			children = (
+				96FDC7781C0D593D0004C554 /* ServiceProvider.swift */,
+				96FDC77A1C0D593D0004C554 /* Info.plist */,
+			);
+			path = AppleTVServiceDemo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +136,34 @@
 				9602937F1C0D010200576F43 /* Sources */,
 				960293801C0D010200576F43 /* Frameworks */,
 				960293811C0D010200576F43 /* Resources */,
+				96FDC7811C0D593D0004C554 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				96FDC77C1C0D593D0004C554 /* PBXTargetDependency */,
 			);
 			name = AppleTVDemo;
 			productName = AppleTVDemo;
 			productReference = 960293831C0D010200576F43 /* AppleTVDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		96FDC7721C0D593D0004C554 /* AppleTVServiceDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96FDC77E1C0D593D0004C554 /* Build configuration list for PBXNativeTarget "AppleTVServiceDemo" */;
+			buildPhases = (
+				96FDC76F1C0D593D0004C554 /* Sources */,
+				96FDC7701C0D593D0004C554 /* Frameworks */,
+				96FDC7711C0D593D0004C554 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppleTVServiceDemo;
+			productName = AppleTVServiceDemo;
+			productReference = 96FDC7731C0D593D0004C554 /* AppleTVServiceDemo.appex */;
+			productType = "com.apple.product-type.tv-app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +176,9 @@
 				ORGANIZATIONNAME = DataArt;
 				TargetAttributes = {
 					960293821C0D010200576F43 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					96FDC7721C0D593D0004C554 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
@@ -116,6 +197,7 @@
 			projectRoot = "";
 			targets = (
 				960293821C0D010200576F43 /* AppleTVDemo */,
+				96FDC7721C0D593D0004C554 /* AppleTVServiceDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +209,13 @@
 			files = (
 				9602938E1C0D010300576F43 /* Assets.xcassets in Resources */,
 				96FDC7661C0D12E80004C554 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96FDC7711C0D593D0004C554 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +233,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96FDC76F1C0D593D0004C554 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96FDC7791C0D593D0004C554 /* ServiceProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96FDC77C1C0D593D0004C554 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96FDC7721C0D593D0004C554 /* AppleTVServiceDemo */;
+			targetProxy = 96FDC77B1C0D593D0004C554 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		960293901C0D010300576F43 /* Debug */ = {
@@ -233,6 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = AppleTVDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppleTVDemo;
@@ -245,10 +351,33 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = AppleTVDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppleTVDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		96FDC77F1C0D593D0004C554 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AppleTVServiceDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AppleTVDemo.AppleTVServiceDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		96FDC7801C0D593D0004C554 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AppleTVServiceDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AppleTVDemo.AppleTVServiceDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -272,6 +401,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		96FDC77E1C0D593D0004C554 /* Build configuration list for PBXNativeTarget "AppleTVServiceDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96FDC77F1C0D593D0004C554 /* Debug */,
+				96FDC7801C0D593D0004C554 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -57,6 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
 
         jsContext.setObject(unsafeBitCast(pushMyViewBlock, AnyObject.self), forKeyedSubscript: "pushCastCollectionViewController")
     }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
+        print("Application launched with URL: \(url)")
+        return true
+    }
 
     
     
