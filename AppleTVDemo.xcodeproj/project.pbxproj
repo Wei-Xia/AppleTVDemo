@@ -47,6 +47,7 @@
 		960293861C0D010300576F43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9602938D1C0D010300576F43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9602938F1C0D010300576F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96F0CA411CCD939F006A0B65 /* AppleTVDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppleTVDemo.entitlements; sourceTree = "<group>"; };
 		96FDC7651C0D12E80004C554 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		96FDC7671C0D133E0004C554 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		96FDC76B1C0D33A60004C554 /* CastCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastCollectionViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		960293851C0D010200576F43 /* AppleTVDemo */ = {
 			isa = PBXGroup;
 			children = (
+				96F0CA411CCD939F006A0B65 /* AppleTVDemo.entitlements */,
 				960293861C0D010300576F43 /* AppDelegate.swift */,
 				96FDC7671C0D133E0004C554 /* RootViewController.swift */,
 				96FDC76B1C0D33A60004C554 /* CastCollectionViewController.swift */,
@@ -177,6 +179,12 @@
 				TargetAttributes = {
 					960293821C0D010200576F43 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 2G32PW3PAZ;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					96FDC7721C0D593D0004C554 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -338,6 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = AppleTVDemo/AppleTVDemo.entitlements;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = AppleTVDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -351,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = AppleTVDemo/AppleTVDemo.entitlements;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = AppleTVDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -409,6 +419,7 @@
 				96FDC7801C0D593D0004C554 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
