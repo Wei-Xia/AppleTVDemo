@@ -58,8 +58,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
         jsContext.setObject(unsafeBitCast(pushMyViewBlock, AnyObject.self), forKeyedSubscript: "pushCastCollectionViewController")
     }
     
+    func appController(appController: TVApplicationController, didStopWithOptions options: [String : AnyObject]?) {
+        print("JS did stop")
+    }
+    
     func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
-        print("Application launched with URL: \(url)")
+        if url.host == nil
+        {	return true
+        }
+        
+        let urlString = url.absoluteString
+        let queryArray = urlString.componentsSeparatedByString("/")
+        let query = queryArray[2]
+        if query.rangeOfString("video") != nil
+        {
+            let videoIndex = queryArray[3]
+            if videoIndex != "" {
+                if let tvNavigation = tvAppController?.navigationController{
+                    window?.rootViewController?.presentViewController(tvNavigation, animated: true) { [unowned self] in
+                        self.tvAppController?.evaluateInJavaScriptContext({ (context) in
+                            context.evaluateScript("playVideo(\(videoIndex))")
+                            }, completion: nil)
+                    }
+                }
+            }
+        }
         return true
     }
 

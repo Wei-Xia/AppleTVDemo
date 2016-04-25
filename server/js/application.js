@@ -39,3 +39,17 @@ var presentScreen = function(documentName){
 		doc.addEventListener("select", Presenter.load.bind(Presenter));
 		Presenter.setDocument(doc);})
 }
+
+var playVideo = function(videoIndex){
+	resourceLoader.loadResource(`${options.BASEURL}templates/episodes.xml.js`, function(resource) {
+        	var doc = Presenter.makeDocument(resource);
+		doc.addEventListener("select", Presenter.load.bind(Presenter));
+        	Presenter.setDocument(doc);
+		var player = new Player();
+        	var playlist = new Playlist();
+        	var mediaItem = new MediaItem("video", "http://localhost:8080/videos/" + videoIndex + ".mp4")
+        	player.playlist = playlist;
+        	player.playlist.push(mediaItem);
+        	player.present();
+	});
+}

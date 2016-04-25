@@ -26,13 +26,19 @@ class ServiceProvider: NSObject, TVTopShelfProvider {
         // Create an array of TVContentItems.
         let item = TVContentItem(contentIdentifier: TVContentIdentifier(identifier: "item1", container: nil)!)
         item?.imageURL = NSURL(string: "\(ServiceProvider.TVBaseURL)images/shelf1.png")
+        item?.displayURL = NSURL(string: "Video://video/1")
+        item?.playURL = NSURL(string: "Video://video/1")
         
         let item2 = TVContentItem(contentIdentifier: TVContentIdentifier(identifier: "item1", container: nil)!)
         item2?.imageURL = NSURL(string: "\(ServiceProvider.TVBaseURL)images/shelf2.png")
-        
+        item2?.displayURL = NSURL(string: "Video://video/3")
+        item2?.playURL = NSURL(string: "Video://video/3")
+
         let item3 = TVContentItem(contentIdentifier: TVContentIdentifier(identifier: "item1", container: nil)!)
         item3?.imageURL = NSURL(string: "\(ServiceProvider.TVBaseURL)images/shelf3.png")
-        
+        item3?.displayURL = NSURL(string: "Video://video/2")
+        item3?.playURL = NSURL(string: "Video://video/2")
+
         return [item!, item2!, item3!]
     }
 
